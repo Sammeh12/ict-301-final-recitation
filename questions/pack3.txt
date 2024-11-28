@@ -1,0 +1,19 @@
+3. How do you declare arrays, what pair of symbols should we use to store our data/values?
+6. What type of arrays that have multiple dimensions; each dimension is usually interpreted as another array?
+9. What property returns the number of dimensions of the array?
+12. What property returns the length of the string?
+15. What property-method replaces the specified index value in the string?
+18. In using Inheritance, it is primarily composed of two (2) classes: Base class and _____.
+21. What special method that is called when a class is created respectively?
+24. What keyword is used to denote that a method can be leveraged for polymorphism via overriding?
+27. What is considered as a completely abstract class, containing only abstract members?
+30. What programming concept that are automatically invoked when an object is destroyed or deleted?
+33. What type of classes that contain only static members?
+36. What class is used to sort an array's elements in descending order of their values?
+39. What property returns the number of days in a specified month of a specified year?
+42. What programming concept in C# that allows objects to be indexed similar to elements of an array?
+45. What keyword is used to lists function similar to an array in that they contain elements and follow array indexing, except they contain constant values that cannot be changed of altered?
+48. What statement is used to handle exceptions so a program won't crash when a error occurs?
+51. What method is used to create a file (via its first parameter) with the speicified path and writes the content to it (via its second parameter)? If the file already exists, it is overwritten.
+54. Give two (2) of the eight (8) File Class methods.
+BONUS

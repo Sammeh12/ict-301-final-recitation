@@ -1,0 +1,19 @@
+2. Arrays is a _____ used to store a collection of data of the same type.
+5. What type of loop that provides a shorter and easier way of accessing array elements?
+8. What property returns the number of elements of the array?
+11. When you declare a string variable, you basically instantiate an object of type _____.
+14. What property-method removes all characters in the string after the specified index value?
+17. What is considered as a programming concept that allows the definition of classes based on another class?
+20. What access modifier that prevents a class from being inherited by other classes or any of its members?
+23. What programming concept that allows a single method to have a number of different implementations?
+26. What are considered as base classes that can be defined when there is no meaningful need for a virtual method to have a separate definition within the said base classes?
+29. What is considered as entities that declare a scope that contains a set of related objects?
+32. What method that uses the same concept as with static member variables?
+35. What class is used to sort an array's elements in ascending order of their values?
+38. What property returns the current day of the week?
+41. What modifier keyword that prevents a member of a class from being modified after construction?
+44. What keyword is used to encapsulate small groups of related variables (for example, the x and y coordinates of a rectangle or the characteristics of an item in an inventory list)?
+47. The process of coding a program so that it would be able to provide possible solutions to an exception is called _____.
+50. To work with files inside our C# program, we have to first import a namespace that can handle different types of file operations. By doing that, we will type "using _____;".
+53. What method is used to append text? Appended text is usually added at the end of the file's contents.
+BONUS

@@ -1,0 +1,19 @@
+1. What is considered as one of the build-in classes in C# that allow storing and manipulation of data?
+4. Arrays follow zero-indexing; the first element starts on the index number of _____.
+7. What type of class in C# that provides properties and methods to work with arrays?
+10. Give one (1) of the three (3) methods that are used in arrays and are mathematical in nature.
+13. What property-method inserts the value into the string starting from the sepcified index value?
+16. What property-method returns a Boolean value of true if the string contains the specified index value?
+19. What access modifier is considered as unique because it can only be accessed within the derived class?
+22. What special method that is called when a class is deleted respectively?
+25. What keyword is used by derived classes to override a method from their base class?
+28. What is it called when a class is a member of another class?
+31. What keyword is used that no matter how many objects of the class are created, there is only one (1) copy of that member?
+34. Give three (3) of the ten (10) static methods or properties of the Math Class.
+37. What method is used to combine any strings given as an argument and returns the combined strings as new string value?
+40. What keyword is used inside a class that allows the referral to the current instance (object) of that class?
+43. Most operators in C# can be _____, meaning they can be redefined for custom actions.
+46. What considered as problems, mostly errors (either caused by the program, the user, or other unavailable resources such as memory, data, among others), that occur during program execution?
+49. What is considered as an optional block in exception handling code that can be used after the catch block declarations?
+52. What method is used to read the contents of a file (supplied via its sole parameter)? The contents can be assigned to a variable for program use.
+BONUS

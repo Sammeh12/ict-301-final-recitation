@@ -1,0 +1,54 @@
+1. Arrays
+2. data structure
+3. []
+4. zero (0)
+5. foreach loop
+6. Multidimensional Arrays
+7. Array class
+8. Length
+9. Rank
+10. Min, Max, Sum
+11. String
+12. Length
+13. Insert
+14. Remove
+15. Replace
+16. contains
+17. Inheritance
+18. Derived class
+19. protected
+20. sealed
+21. Constructor
+22. Destructor
+23. Polymorphism
+24. virtual
+25. override
+26. Abstract classes
+27. Interfaces
+28. Nested class
+29. Namespaces
+30. Destructors
+31. static
+32. Static Method
+33. Static Classes
+34. Math.PI, .E, .Max(), .Min(), .Abs(), .Sin(), .Cos(), .Pow(), .Round(), .Sqrt()
+35. Sort()
+36. Reverse()
+37. Concat()
+38. Today
+39. DaysInMonth
+40. this
+41. readonly
+42. Indexers
+43. Overloaded
+44. struct
+45. enum
+46. Exceptions
+47. exception handling
+48. try-catch Statement
+49. finally Block
+50. System.IO
+51. WriteAllText() method
+52. ReadAllText() method
+53. AppendAllText() method
+54. WriteAllText(), ReadAllText(), AppendAllText(), Create(), Delete(), Exists(), Copy(), Move()

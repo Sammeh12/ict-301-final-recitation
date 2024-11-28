@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Title */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Result Section */
+.result h3 {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* List Container */
+#remainingItems {
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 800px;
+    margin: 20px auto;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+#remainingItems li {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#remainingItems li:hover {
+    background: #e7f5e7;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Box Title */
+.list-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    animation: fadeIn 0.5s;
+}
+
+.random-name {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    animation: flicker 0.1s infinite;
+}
+
+.final-result {
+    font-size: 1.8em;
+    color: #28a745;
+    margin: 15px 0;
+}
+
+button.close-modal {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.close-modal:hover {
+    background-color: #218838;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
