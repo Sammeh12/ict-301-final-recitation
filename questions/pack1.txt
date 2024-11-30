@@ -16,4 +16,4 @@
 46. What considered as problems, mostly errors (either caused by the program, the user, or other unavailable resources such as memory, data, among others), that occur during program execution?
 49. What is considered as an optional block in exception handling code that can be used after the catch block declarations?
 52. What method is used to read the contents of a file (supplied via its sole parameter)? The contents can be assigned to a variable for program use.
-BONUS
+You have been hit by Pikachu's Thunder-- BONUS!

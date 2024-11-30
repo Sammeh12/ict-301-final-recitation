@@ -16,4 +16,4 @@
 48. What statement is used to handle exceptions so a program won't crash when a error occurs?
 51. What method is used to create a file (via its first parameter) with the speicified path and writes the content to it (via its second parameter)? If the file already exists, it is overwritten.
 54. Give two (2) of the eight (8) File Class methods.
-BONUS
+You have been hit by Mewtwo's Psy-- BONUS!

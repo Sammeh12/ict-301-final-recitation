@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions Inside Card Pack by Sir Sam</title>
+    <title>Questions Inside Card Pack</title>
     <style>
-        /* General body styling */
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
             background-color: #2d3436;
-            /* Dark background for a mysterious vibe */
             color: white;
             margin: 0;
             padding: 20px;
             background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
-            /* Subtle linen texture */
             background-size: cover;
         }
 
@@ -26,14 +22,6 @@
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
         }
 
-        #output {
-            margin-top: 20px;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #f39c12;
-        }
-
-        /* Card pack container */
         .card-container {
             display: flex;
             justify-content: center;
@@ -42,7 +30,6 @@
             flex-wrap: wrap;
         }
 
-        /* Individual card pack */
         .card {
             width: 150px;
             height: 200px;
@@ -51,19 +38,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: linear-gradient(145deg, #f7d84b, #f7c600);
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2), inset 0px 0px 15px rgba(255, 255, 255, 0.3);
-            position: relative;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 0px 0px 20px rgba(255, 255, 255, 0.4);
         }
 
         /* Color-specific card backgrounds */
@@ -82,206 +61,188 @@
             /* Purple gradient */
         }
 
-        /* Modal */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 0px 0px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .used-questions {
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            color: #f39c12;
+        }
+
+        .reset-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #e74c3c;
+            border: none;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Modal Styling */
         .modal {
-            display: none;
-            /* Hidden by default */
             position: fixed;
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            /* Dark background for modal */
-            animation: fadeIn 0.5s ease-out;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
-        /* Modal content */
+        .modal.active {
+            display: flex;
+        }
+
         .modal-content {
-            background-color: #2c3e50;
-            padding: 20px;
-            margin: 15% auto;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.5s ease-out;
-        }
-
-        /* Fade-in effect for the modal background */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Slide-up effect for the modal content */
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Close button */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
+            background: black;
             color: white;
-            text-decoration: none;
-            cursor: pointer;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            animation: scaleUp 0.4s ease-out forwards;
+            max-width: 400px;
+            width: 80%;
         }
 
-        /* Modal text for the random names display */
-        #modalOutput {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #f39c12;
-            /* Gold-colored text */
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-            opacity: 0;
-            /* Start as invisible */
-            transition: opacity 1s ease-in-out;
-            /* Fade-in animation */
+        .modal-content h2 {
+            margin: 0 0 15px;
+            font-size: 1.8em;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+        }
+
+        .modal-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .modal-close {
+            padding: 10px 20px;
+            background: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #2980b9;
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.7);
+            }
+            to {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
-
 <body>
     <h1>Pick a Card Pack</h1>
-
-    <!-- Card pack container -->
     <div class="card-container">
-        <div class="card" id="card1">
-            <span>Pikachu</span>
-        </div>
-        <div class="card" id="card2">
-            <span>Charizard</span>
-        </div>
-        <div class="card" id="card3">
-            <span>Mewtwo</span>
-        </div>
+        <div class="card" id="card1">Pikachu</div>
+        <div class="card" id="card2">Charizard</div>
+        <div class="card" id="card3">Mewtwo</div>
     </div>
+    <div id="used-questions" class="used-questions">
+        <h2>Used Questions:</h2>
+        <ul id="usedQuestionsList"></ul>
+    </div>
+    <button id="reset" class="reset-btn">Reset</button>
 
     <!-- Modal -->
-    <div id="myModal" class="modal">
+    <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Your question is:</h2>
-            <p id="modalOutput">Waiting for a random question...</p>
+            <h2 id="modalQuestion">Your Question</h2>
+            <button id="addToUsed" class="modal-close">Okay</button>
         </div>
     </div>
 
     <script>
-        // Weights for each file
-        const fileWeights = {
-            'pack1.txt': [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.01], // Weights for file1.txt 1 = 100%, 0.1 = 10%
-            'pack2.txt': [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.01], // Weights for file2.txt
-            'pack3.txt': [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.01] // Weights for file3.txt
+        const usedQuestions = {
+            pack1: new Set(),
+            pack2: new Set(),
+            pack3: new Set()
         };
 
-        // Function to fetch the file and display a random line from it
-        function fetchAndDisplayFile(fileName) {
+        const fileMap = {
+            card1: { file: 'pack1.txt', pack: 'pack1' },
+            card2: { file: 'pack2.txt', pack: 'pack2' },
+            card3: { file: 'pack3.txt', pack: 'pack3' }
+        };
+
+        const modal = document.getElementById('modal');
+        const modalQuestion = document.getElementById('modalQuestion');
+        const addToUsedButton = document.getElementById('addToUsed');
+
+        let currentQuestion = '';
+        let currentPack = '';
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const { file, pack } = fileMap[card.id];
+                fetchFile(file, pack);
+            });
+        });
+
+        function fetchFile(fileName, pack) {
             fetch(fileName)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
+                .then(res => res.text())
                 .then(data => {
-                    const lines = data.split('\n').filter(line => line.trim() !== ''); // Split file content and remove empty lines
-
-                    // Use predefined weights for the specific file
-                    const weights = fileWeights[fileName];
-
-                    // Check if weights match the number of lines
-                    if (weights && weights.length === lines.length) {
-                        const randomIndex = getWeightedRandomIndex(weights);
-                        const randomLine = lines[randomIndex];
-
-                        // Display the selected line
-                        const modalOutput = document.getElementById('modalOutput');
-                        modalOutput.textContent = randomLine;
-
-                        // Show the result with a fade-in effect
-                        modalOutput.style.opacity = 0; // Reset opacity
-                        setTimeout(() => {
-                            modalOutput.style.opacity = 1; // Trigger fade-in effect
-                        }, 200); // Short delay before fade-in
-                    } else {
-                        document.getElementById('modalOutput').textContent = `Error: Mismatched weights and lines in ${fileName}`;
+                    const lines = data.split('\n').filter(line => line.trim() && !usedQuestions[pack].has(line));
+                    if (lines.length === 0) {
+                        alert('All questions used. Reset to play again.');
+                        return;
                     }
-
-                    openModal(); // Open the popup modal
-                })
-                .catch(error => {
-                    console.error('Error fetching the file:', error);
-                    document.getElementById('modalOutput').textContent = `Error loading ${fileName}!`;
-                    openModal(); // Open the popup modal on error
+                    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+                    currentQuestion = randomLine;
+                    currentPack = pack;
+                    showModal(randomLine);
                 });
         }
 
-        // Open the modal
-        function openModal() {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "block";
+        function showModal(question) {
+            modal.classList.add('active');
+            modalQuestion.textContent = question;
         }
 
-        // Close the modal when the user clicks on the 'x'
-        document.getElementsByClassName("close")[0].onclick = function () {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        };
+        addToUsedButton.addEventListener('click', () => {
+            modal.classList.remove('active');
+            addToUsedQuestions(currentQuestion, currentPack);
+        });
 
-        // Close the modal if the user clicks outside the modal content
-        window.onclick = function (event) {
-            const modal = document.getElementById("myModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        };
-
-        // Helper function to get a weighted random index
-        function getWeightedRandomIndex(weights) {
-            const cumulativeWeights = [];
-            weights.reduce((sum, weight, index) => {
-                cumulativeWeights[index] = sum + weight;
-                return cumulativeWeights[index];
-            }, 0);
-            const random = Math.random() * cumulativeWeights[cumulativeWeights.length - 1];
-            return cumulativeWeights.findIndex(cumulativeWeight => random < cumulativeWeight);
+        function addToUsedQuestions(question, pack) {
+            usedQuestions[pack].add(question);
+            const usedQuestionsList = document.getElementById('usedQuestionsList');
+            const listItem = document.createElement('li');
+            listItem.textContent = `${pack}: ${question}`;
+            usedQuestionsList.appendChild(listItem);
         }
 
-        // Attach event listeners to each card with corresponding file
-        document.getElementById('card1').addEventListener('click', () => {
-            fetchAndDisplayFile('pack1.txt');
+        document.getElementById('reset').addEventListener('click', () => {
+            Object.keys(usedQuestions).forEach(key => usedQuestions[key].clear());
+            document.getElementById('usedQuestionsList').innerHTML = '';
         });
-        document.getElementById('card2').addEventListener('click', () => {
-            fetchAndDisplayFile('pack2.txt');
-        });
-        document.getElementById('card3').addEventListener('click', () => {
-            fetchAndDisplayFile('pack3.txt');
-        });
-
     </script>
 </body>
-
 </html>
